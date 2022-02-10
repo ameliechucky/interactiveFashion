@@ -4,13 +4,13 @@
 */
 int maxValue = 700;
 int minValue = 300;
-int ledPin = 0; //// Pin 0 = ADC 0
-int sensorPin = 3; // Pin 3 = ADC 3
+int ledPin = 0; //// Pin 0 = PWM
+int sensorPin = 3; // Pin 3 = ADC 
 
-// the setup routine runs once when you press reset:
+// the setup routine runs once:
 void setup() {
   pinMode(ledPin, OUTPUT);
-  //Serial.begin(9600);
+  //Serial.begin(9600); //this works if you are using arduino
 }
 
 // the loop routine runs over and over again forever:
@@ -20,5 +20,5 @@ void loop() {
   int b = constrain(sensorValue, minValue, maxValue);
   b = map(b, minValue, maxValue, 255, 0);
   analogWrite(ledPin, b);
-  //Serial.println(sensorValue);
+  //Serial.println(sensorValue); //this works if you are using arduino
 }
