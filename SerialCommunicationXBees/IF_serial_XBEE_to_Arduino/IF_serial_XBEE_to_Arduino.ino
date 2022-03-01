@@ -5,7 +5,7 @@
   This example is to send multiple values from an XBee to an Arduino (or Lilypad2).
  **/
 
-#define NUM_OF_VALUES_FROM_XBEE 2    /** YOU MUST CHANGE THIS ACCORDING TO YOUR PROJECT **/
+#define NUM_OF_VALUES_FROM_XBEE 3    /** YOU MUST CHANGE THIS ACCORDING TO YOUR PROJECT **/
 
 
 /** DO NOT REMOVE THESE **/
@@ -13,7 +13,7 @@ int tempValue = 0;
 int valueIndex = 0;
 
 /* This is the array of values storing the data from the XBee. */
-int processing_values[NUM_OF_VALUES_FROM_XBEE];
+int xbee_values[NUM_OF_VALUES_FROM_XBEE];
 
 
 void setup() {
@@ -37,7 +37,7 @@ void loop() {
     // map values from the sensor to frequency. This sensor is connected to Lilypad1
     //from (0 - 1023) to the output pitch range (120 - 1500Hz)
     int f = map(xbee_values[1], 0, 1023, 120, 1500);
-    tone(8, processing_values[1], 50);
+    tone(8, xbee_values[1], 50);
     delay(10);        // delay in between reads for stability
   */
   //end of example
