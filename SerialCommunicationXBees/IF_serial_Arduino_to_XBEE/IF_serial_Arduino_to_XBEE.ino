@@ -1,6 +1,6 @@
 // IMA NYU Shanghai
 // Interactive Fashion
-// For sending multiple values from Arduino to XBEE
+// For sending multiple values from Arduino (Lilypad1) to XBEE
 
 
 void setup() {
@@ -22,7 +22,7 @@ void loop() {
   Serial.print(sensor3);
   Serial.println(); // add linefeed after sending the last sensor value
 
-  // too fast communication might cause some latency in Processing
+  // too fast communication might cause some latency when we receive the values
   // this delay resolves the issue.
   delay(100);
 
