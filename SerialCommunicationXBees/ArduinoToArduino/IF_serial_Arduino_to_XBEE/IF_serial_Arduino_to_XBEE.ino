@@ -1,6 +1,6 @@
 // IMA NYU Shanghai
 // Interactive Fashion
-// For sending multiple values from Arduino (Lilypad1) to XBEE
+// For sending multiple values from Arduino (Lilypad A) to XBEE
 #include <SoftwareSerial.h>
 SoftwareSerial mySerial(10, 11); // RX, TX
 
