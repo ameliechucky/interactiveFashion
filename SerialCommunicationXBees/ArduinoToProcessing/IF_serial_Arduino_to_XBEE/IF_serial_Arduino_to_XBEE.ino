@@ -1,10 +1,11 @@
 // IMA NYU Shanghai
 // Interactive Fashion
-// For sending multiple values from Arduino (Lilypad1) to XBEE
-
+// For sending multiple values from Arduino (Lilypad A) to XBEE
+#include <SoftwareSerial.h>
+SoftwareSerial mySerial(10, 11); // RX, TX
 
 void setup() {
-  Serial.begin(9600);
+  mySerial.begin(9600);
 }
 
 void loop() {
@@ -15,12 +16,12 @@ void loop() {
   int sensor3 = analogRead(A2);
 
   // send the values keeping this format
-  Serial.print(sensor1);
-  Serial.print(",");  // put comma between sensor values
-  Serial.print(sensor2);
-  Serial.print(",");  // put comma between sensor values
-  Serial.print(sensor3);
-  Serial.println(); // add linefeed after sending the last sensor value
+  mySerial.print(sensor1);
+  mySerial.print(",");  // put comma between sensor values
+  mySerial.print(sensor2);
+  mySerial.print(",");  // put comma between sensor values
+  mySerial.print(sensor3);
+  mySerial.println(); // add linefeed after sending the last sensor value
 
   // too fast communication might cause some latency when we receive the values
   // this delay resolves the issue.
